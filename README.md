@@ -18,11 +18,18 @@ The canonical version of every product fact lives on the website. Where an artic
 
 ## Official API example repositories
 
-Each product has its own repository with an OpenAPI contract, a machine-readable `product.json`, an `llms.txt` summary and runnable examples in seven languages.
+One repository per product, each with an OpenAPI contract, a machine-readable `product.json`, an `llms.txt` summary and runnable examples in seven languages.
 
-| Product | Repository |
-|---|---|
-| [Telegram Registration Check](https://github.com/tgvalidator/telegram-number-checker-api) | `telegram-number-checker-api` |
+| Product | Shape | Repository |
+|---|---|---|
+| [Telegram Registration Check](https://github.com/tgvalidator/telegram-number-checker-api) | Realtime | `telegram-number-checker-api` |
+| [Telegram Bulk Activity Check](https://github.com/tgvalidator/telegram-bulk-activity-api) | Bulk (async) | `telegram-bulk-activity-api` |
+| [Telegram Bulk Profile Check](https://github.com/tgvalidator/telegram-bulk-profile-api) | Bulk (async) | `telegram-bulk-profile-api` |
+| [Telegram Bulk Registration Check](https://github.com/tgvalidator/telegram-bulk-registration-api) | Bulk (async) | `telegram-bulk-registration-api` |
+| [Telegram Bulk Username Check](https://github.com/tgvalidator/telegram-bulk-username-api) | Bulk (async) | `telegram-bulk-username-api` |
+| [Telegram Bulk Username Profile Check](https://github.com/tgvalidator/telegram-bulk-username-profile-api) | Bulk (async) | `telegram-bulk-username-profile-api` |
+
+A **realtime** check answers inside the same HTTP response (`POST /api/v1/check`, or `POST /api/v1/batch-check` for up to 100 identifiers). A **bulk task** takes a file and answers later (`POST /api/v1/bulk-tasks`). They are separate endpoints and are not interchangeable.
 
 ## Responsible use
 
